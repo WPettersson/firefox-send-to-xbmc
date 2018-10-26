@@ -265,7 +265,7 @@ function handleComplete(resp) {
 }
 
 function setupButton(){
-  var gettingAllTabs = browser.tabs.query({url:['*://www.youtube.com/watch*','*://vimeo.com/*','*://twitch.tv/videos/*','*://www.bbc.co.uk/iplayer/episode/*/*']});
+  var gettingAllTabs = browser.tabs.query({url:['*://www.youtube.com/watch*','*://vimeo.com/*','*://twitch.tv/*','*://www.bbc.co.uk/iplayer/episode/*/*']});
   gettingAllTabs.then((tabs) => {
     for (let tab of tabs) {
       browser.pageAction.show(tab.id);
@@ -279,9 +279,16 @@ function displayButton(tabId, changeInfo, tabInfo) {
     var regExp = /^.*(youtube.com\/watch.*[\?\&]v=)([^#\&\?]*).*/;
     var vimeoRex = /^.*vimeo.com\/([0-9]+)/;
     var twitchVideoRex = /^.*twitch.tv\/videos\/([0-9]+)$/;
+    var twitchLiveRex = /^.*twitch.tv\/([a-zA-Z0-9_]+)$/;
 
     if (tabInfo.url.match(regExp) || tabInfo.url.match(vimeoRex) || tabInfo.url.match(twitchVideoRex)) {
       browser.pageAction.show(tabId);
+    }
+    if (tabInfo.url.match(twitchLiveRex)) {
+      var notTwitchChannel = /twitch.tv\/(friends|inventory|subscriptions|payments)/;
+      if (! (tabInfo.url.match(notTwitchChannel))) {
+        browser.pageAction.show(tabId);
+      }
     }
 }
 
