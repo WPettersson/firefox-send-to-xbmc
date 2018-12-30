@@ -1,9 +1,11 @@
 # Send to XBMC/Kodi Firefox plugin
-https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc/
+https://addons.mozilla.org/en-US/firefox/addon/send-to-xbmc-2/
 
 ## About
 Sends YouTube videos, video and music links to Kodi for playback. Adds a right click menu for links pointing to YouTube and audio/video files for direct playback on your TV with Kodi.
 Works with XBMC Eden and later, as well as with Kodi Helix and newer.
+
+This is a continuation of the original Send-to-Kodi, by Dirk-jan Mollema (dirkjanm on Github), to add support for Twitch streams and BBC iPlayer in the URL Bar.
 
 Version 2.0 of the plugin was made open source and placed on GitHub.
 This version rewrote the whole server management part of the plugin, adding support for multiple servers and adding the basics for a lot of extra features
@@ -24,6 +26,7 @@ Plug your Kodi info into the FireFox addon... IP can be obtained from System -> 
 
   * YouTube
   * Twitch
+  * BBC iPlayer
   * Vimeo
   * mp4
   * mkv
