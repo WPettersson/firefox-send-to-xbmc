@@ -281,6 +281,7 @@ function displayButton(tabId, changeInfo, tabInfo) {
     var vimeoRex = /^.*vimeo.com\/([0-9]+)/;
     var twitchVideoRex = /^.*twitch.tv\/videos\/([0-9]+)$/;
     var twitchLiveRex = /^.*twitch.tv\/([a-zA-Z0-9_]+)$/;
+    var bbcRex = /^.*\.bbc\.co\.uk\/iplayer\/episode\/([a-zA-Z0-9_]{8}\/)/;
 
     if (tabInfo.url.match(regExp) || tabInfo.url.match(vimeoRex) || tabInfo.url.match(twitchVideoRex)) {
       browser.pageAction.show(tabId);
