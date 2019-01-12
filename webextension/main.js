@@ -283,7 +283,7 @@ function displayButton(tabId, changeInfo, tabInfo) {
     var twitchLiveRex = /^.*twitch.tv\/([a-zA-Z0-9_]+)$/;
     var bbcRex = /^.*\.bbc\.co\.uk\/iplayer\/episode\/([a-zA-Z0-9_]{8}\/)/;
 
-    if (tabInfo.url.match(regExp) || tabInfo.url.match(vimeoRex) || tabInfo.url.match(twitchVideoRex)) {
+    if (tabInfo.url.match(regExp) || tabInfo.url.match(vimeoRex) || tabInfo.url.match(twitchVideoRex) || tabInfo.url.match(bbcRex)) {
       browser.pageAction.show(tabId);
     }
     if (tabInfo.url.match(twitchLiveRex)) {
