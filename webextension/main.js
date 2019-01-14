@@ -121,7 +121,7 @@ function handleSubMenuClick(clickdata){
 
 //Parse an url to send
 function parseUrlPlay(url, pathname, playhost) {
-  var youtubeRex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+  var youtubeRex = /^.*(youtu.be\/|embed\/|watch\?v=)([^#\&\?]*).*/;
   var match = url.match(youtubeRex);
   if (match && match[2].length == 11) {
     sendYouTube(match[2], playhost);
